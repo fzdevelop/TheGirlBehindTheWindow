@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Girl Behind the Window | Md Faraz Waseem</title>
+<meta name="description" content="The Girl Behind the Window – an emotional romantic fiction by Md Faraz Waseem. Some love stories are meant to be felt, not spoken.">
+<meta name="author" content="Md Faraz Waseem">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg-dark:#0e0f13;
+  --bg-light:#151722;
+  --accent:#e6b36a;
+  --text:#eaeaf0;
+  --muted:#b8b9c5;
+  --glass:rgba(255,255,255,.05);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:radial-gradient(circle at top,#1b1d2b,#0e0f13);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* ================= HERO (FROM FIRST CODE – UNCHANGED) ================= */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:4rem 1.5rem;
+}
+
+.hero-wrap{
+  max-width:1200px;
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:3rem;
+}
+
+@media(min-width:900px){
+  .hero-wrap{
+    grid-template-columns:1.1fr 0.9fr;
+    align-items:center;
+  }
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.6rem,5vw,4.2rem);
+  margin-bottom:1rem;
+}
+
+.tagline{
+  font-size:1.15rem;
+  color:var(--muted);
+  margin-bottom:1.5rem;
+}
+
+.author{
+  letter-spacing:2px;
+  font-size:.85rem;
+  opacity:.8;
+  margin-bottom:2.5rem;
+}
+
+.cta{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:14px 34px;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.4s;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,#f0c27b,#e6b36a);
+  color:#000;
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(230,179,106,.35);
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,.25);
+  color:white;
+}
+
+.btn-outline:hover{
+  background:white;
+  color:#000;
+}
+
+.book-box{
+  display:flex;
+  justify-content:center;
+  perspective:1200px;
+}
+
+.book{
+  width:280px;
+  aspect-ratio:2/3;
+  transform:rotateY(-18deg) rotateX(4deg);
+  transition:.6s;
+}
+
+.book:hover{
+  transform:rotateY(-10deg) rotateX(2deg) scale(1.05);
+}
+
+.book img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:8px;
+  box-shadow:0 40px 80px rgba(0,0,0,.7);
+}
+
+/* ================= MODERN SECTIONS ================= */
+
+.section{
+  padding:6rem 1.5rem;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+.glass{
+  background:var(--glass);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter: blur(18px); /* For Safari */
+  border-radius:22px;
+  padding:3.5rem;
+  box-shadow:0 30px 80px rgba(0,0,0,.4);
+}
+
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;
+  text-align:center;
+  margin-bottom:1.5rem;
+}
+
+.section p{
+  text-align:center;
+  color:var(--muted);
+  font-size:1.05rem;
+}
+
+/* FEATURES */
+.features{
+  margin-top:3rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.5rem;
+}
+
+.feature{
+  background:rgba(255,255,255,.06);
+  padding:2.2rem;
+  border-radius:18px;
+  text-align:center;
+  transition:.4s;
+}
+
+.feature:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 50px rgba(0,0,0,.5);
+}
+
+.feature h3{
+  color:var(--accent);
+  margin-bottom:.6rem;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:16px;
+  transition:.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* AUTHOR */
+.author-box{
+  display:grid;
+  gap:2.5rem;
+  align-items:center;
+}
+
+@media(min-width:768px){
+  .author-box{
+    grid-template-columns:200px 1fr;
+  }
+}
+
+.author-box img{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
+
+.insta{
+  display:inline-block;
+  margin-top:1rem;
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* BUY */
+.buy{
+  text-align:center;
+}
+
+.rating{
+  margin-top:1rem;
+  font-weight:600;
+}
+
+.rating span{
+  color:var(--accent);
+}
+
+/* FOOTER */
+footer{
+  padding:3rem 1.5rem;
+  text-align:center;
+  color:#8f90a3;
+  font-size:.85rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-wrap">
+    <div>
+      <h1>The Girl Behind the Window</h1>
+      <p class="tagline">•Some love stories are meant to be felt, not spoken.</p>
+      <h3 class="author">—MD FARAZ WASEEM</h3>
+      <div class="cta">
+        <!-- EDIT THIS: Replace '#' with your main Amazon link -->
+        <a href="https://amzn.in/d/7vj8m7D" class="btn btn-primary">Buy on Amazon</a>
+        <a href="#about" class="btn btn-outline">Read More</a>
+      </div>
+    </div>
+
+    <div class="book-box">
+      <div class="book">
+        <!-- EDIT THIS: Replace this placeholder with your book cover image URL -->
+        <img src="https://i.postimg.cc/50rfYXcF/Picsart-25-12-14-13-02-16-049.png" alt="The Girl Behind the Window Book Cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container glass">
+    <h2>About the Book</h2>
+    <p>
+      The Girl Behind the Window is an emotional romantic fiction that explores unspoken love, loneliness, and silent connection. Through the eyes of Faraz, the story captures the pain of loving someone from a distance, someone whose name remains unnamed to protect the purity of the bond they shared. A deeply moving tale for readers who believe that the strongest emotions are often the ones left unsaid.
+    </p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+  <div class="container glass">
+    <h2>Why Readers Love It</h2>
+    <div class="features">
+      <div class="feature"><h3>Silent Romance</h3><p>Love without words.</p></div>
+      <div class="feature"><h3>Emotional Depth</h3><p>Deeply human & touching.</p></div>
+      <div class="feature"><h3>Poetic Writing</h3><p>Soft, reflective prose.</p></div>
+      <div class="feature"><h3>Lasting Impact</h3><p>A story that stays.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <div class="container">
+    <h2>Visual Mood</h2>
+    <div class="gallery">
+      <!-- EDIT THIS: Replace these placeholders with your promotional image URLs -->
+      <img src="https://i.postimg.cc/d3fbLJvj/Picsart_25_12_14_08_54_33_198.jpg" alt="Promotional quote poster for the book">
+      <img src="https://i.postimg.cc/0y40Frn5/Picsart_25_12_13_15_21_46_669.jpg" alt="Book mockup in a moody setting">
+      <img src="https://i.postimg.cc/MZmWZQhG/Picsart_25_12_14_08_55_16_384.jpg" alt="Image with a window theme representing the book">
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="section">
+  <div class="container glass">
+    <div class="author-box">
+      <!-- EDIT THIS: Replace this placeholder with your author photo URL -->
+      <img src="https://i.postimg.cc/4dtyvvXD/Picsart-25-12-14-11-45-17-331.png" alt="Author Md Faraz Waseem">
+      <div>
+        <h2>Md Faraz Waseem</h2>
+        <p>
+          He is a storyteller drawn to silence, emotions, and unseen connections. He believes that the most powerful feelings are the ones never spoken aloud. His writing blends simplicity with poetic depth, giving voice to the quiet emotions that live between words.
+
+        </p>
+        <!-- EDIT THIS: Replace '#' with your Instagram profile link -->
+        <a href="https://www.instagram.com/fz_lyrics_07?igsh=MTV6NzNoaWxvM2RvZw==" class="insta" target="_blank" rel="noopener noreferrer">📷 @fz_lyrics_07</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUY -->
+<section id="buy" class="section">
+  <div class="container glass buy">
+    <h2>Available Worldwide</h2>
+    <p>Paperback & Kindle Editions</p>
+    <!-- EDIT THIS: Replace '#' with your final Amazon purchase link -->
+    <a href="https://amzn.in/d/7vj8m7D" class="btn btn-primary" style="margin-top:1.5rem;">Order Now</a>
+    <div class="rating">⭐ Expert Rating: <span>9.0 / 10</span></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Md Faraz Waseem. All Rights Reserved.</p>
+  <p>This is a work of fiction. Any resemblance to real persons is coincidental.</p>
+</footer>
+
+</body>
+</html>
